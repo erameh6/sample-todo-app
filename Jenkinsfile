@@ -21,14 +21,14 @@ pipeline {
                 sh 'python3 test_sample_todo_app.py'
                 sh 'pkill -f "http.server" || true'
                 sh 'sleep 10'
-                sh 'curl -X DELETE http://127.0.0.1:8000/api/v1.0/stop || true'
+                sh 'curl -X DELETE http://98.80.69.229:8000/api/v1.0/stop || true'
             }
         }
     }
     post {
         always {
             sh 'pkill -f "http.server" || true'
-            sh 'curl -X DELETE http://127.0.0.1:8000/api/v1.0/stop || true'
+            sh 'curl -X DELETE http://98.80.69.229:8000/api/v1.0/stop || true'
         }
     }
 }
